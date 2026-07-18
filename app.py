@@ -28,7 +28,7 @@ if uploaded_file and analyze_btn:
     files = {"file": uploaded_file.getvalue()}
     try:
         with st.spinner("Analyse en cours..."):
-            response = requests.post("http://localhost:8000/predict", files=files)
+            response = requests.post("https://melvineexamenmlops.onrender.com/predict", files=files)
         
         if response.status_code == 200:
             result = response.json()
